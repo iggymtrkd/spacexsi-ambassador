@@ -1,0 +1,300 @@
+<!doctype html>
+<html lang="en" class="dark">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Igor Noronha — SpaceXSI Ambassador application</title>
+<meta name="description" content="Igor Noronha's personal page for his SpaceXSI Ambassador application: a video pitch, three fronts, and what he builds with Cursor, Grok Bot and Grok Build from Florianópolis, Brazil.">
+<meta name="theme-color" content="#090A0B">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Igor Noronha — SpaceXSI Ambassador application">
+<meta property="og:description" content="Three fronts for the SpaceXSI ambassador program, from the beaches of Florianópolis.">
+<meta property="og:url" content="https://iggymtrkd.github.io/spacexsi-ambassador/">
+<meta property="og:image" content="https://iggymtrkd.github.io/spacexsi-ambassador/assets/og.jpg">
+<meta property="og:image:width" content="1200"><meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" type="image/svg+xml" href="assets/klaus-mark.svg">
+<link rel="preload" href="assets/outfit-latin.woff2" as="font" type="font/woff2" crossorigin>
+<style>
+@font-face{font-family:'Outfit';font-weight:300 800;font-display:swap;src:url(assets/outfit-latin-ext.woff2) format('woff2');unicode-range:U+0100-02BA,U+02BD-02C5,U+02C7-02CC,U+02CE-02D7,U+02DD-02FF,U+0304,U+0308,U+0329,U+1D00-1DBF,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20C4,U+2113,U+2C60-2C7F,U+A720-A7FF}
+@font-face{font-family:'Outfit';font-weight:300 800;font-display:swap;src:url(assets/outfit-latin.woff2) format('woff2');unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}
+:root{
+  --canvas:#090A0B; --bg:#0E1115; --card:#15181E; --secondary:#21242C; --border:#272C35;
+  --fg:#FAFAFA; --muted:#818898; --cream:#F6F0E7;
+  --orange:#FF8533; --amber:#FF9F1A; --glow:#FF85334D;
+  --grad:linear-gradient(135deg,#FF8533,#FF9F1A);
+  --radius:.875rem;
+  --mono:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{font-family:'Outfit',system-ui,sans-serif;background:var(--canvas);color:var(--fg);line-height:1.6;font-size:17px;overflow-x:hidden;
+  background-image:
+    radial-gradient(1200px 600px at 50% -10%, rgba(255,133,51,.16), transparent 60%),
+    radial-gradient(800px 500px at 100% 40%, rgba(255,159,26,.06), transparent 60%),
+    radial-gradient(800px 500px at 0% 70%, rgba(255,133,51,.05), transparent 60%);
+  background-attachment:scroll}
+/* starfield */
+.stars{position:fixed;inset:0;z-index:0;pointer-events:none;opacity:.55;
+  background-image:
+   radial-gradient(1px 1px at 12% 18%,#fff,transparent),radial-gradient(1px 1px at 28% 72%,#fff,transparent),
+   radial-gradient(1.5px 1.5px at 44% 34%,#fff,transparent),radial-gradient(1px 1px at 63% 12%,#fff,transparent),
+   radial-gradient(1px 1px at 78% 58%,#fff,transparent),radial-gradient(1.5px 1.5px at 90% 28%,#fff,transparent),
+   radial-gradient(1px 1px at 8% 88%,#fff,transparent),radial-gradient(1px 1px at 55% 92%,#fff,transparent),
+   radial-gradient(1px 1px at 36% 8%,#fff,transparent),radial-gradient(1px 1px at 94% 82%,#fff,transparent),
+   radial-gradient(1px 1px at 70% 40%,#fff,transparent),radial-gradient(1px 1px at 20% 46%,#fff,transparent);
+}
+main,header,footer{position:relative;z-index:1}
+a{color:var(--orange);text-decoration:none}
+a:hover{color:var(--amber)}
+.wrap{width:min(1080px,100% - 40px);margin-inline:auto}
+.narrow{width:min(760px,100% - 40px);margin-inline:auto}
+
+/* nav */
+nav{display:flex;align-items:center;justify-content:space-between;padding:20px 0}
+.brand{display:flex;align-items:center;gap:12px;color:var(--fg);font-weight:600;letter-spacing:-.01em}
+.brand img{width:34px;height:34px;border-radius:9px}
+.brand small{display:block;font-size:12px;font-weight:400;color:var(--muted);letter-spacing:.02em;margin-top:-4px}
+.links{display:flex;gap:10px}
+.pill{display:inline-flex;align-items:center;gap:8px;padding:9px 16px;border-radius:999px;border:1px solid var(--border);background:rgba(21,24,30,.7);color:var(--fg);font-size:14px;font-weight:500;transition:.2s}
+.pill:hover{border-color:var(--orange);color:var(--fg);transform:scale(1.02)}
+.pill svg{width:15px;height:15px;fill:currentColor}
+.btn{display:inline-flex;align-items:center;gap:8px;padding:12px 24px;border-radius:999px;background:var(--grad);color:#1a0d02;font-weight:600;box-shadow:0 4px 20px var(--glow);transition:.2s}
+.btn:hover{transform:scale(1.02);filter:brightness(1.08);color:#1a0d02}
+
+/* hero */
+.hero{text-align:center;padding:14px 0 24px}
+.eyebrow{display:inline-flex;align-items:center;gap:8px;font-family:var(--mono);font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--orange);padding:6px 14px;border:1px solid rgba(255,133,51,.35);border-radius:999px;background:rgba(255,133,51,.08)}
+.eyebrow i{width:6px;height:6px;border-radius:50%;background:var(--orange);box-shadow:0 0 10px var(--orange)}
+h1{font-size:clamp(38px,6vw,64px);line-height:1.02;font-weight:700;letter-spacing:-.03em;margin:16px 0 0}
+h1 em{font-style:normal;background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent}
+.lede{font-size:clamp(18px,2.4vw,22px);color:var(--muted);max-width:640px;margin:0 auto;font-weight:300}
+.lede b{color:var(--cream);font-weight:500}
+.chips{display:flex;flex-wrap:wrap;gap:8px;justify-content:center;margin-top:22px}
+.chip{padding:6px 14px;border-radius:999px;background:var(--secondary);border:1px solid var(--border);font-size:14px;color:var(--fg)}
+.chip.o{background:rgba(255,133,51,.1);border-color:rgba(255,133,51,.35);color:var(--cream)}
+
+/* video */
+.stage{position:relative;display:flex;flex-direction:column;align-items:center;margin:22px auto 34px}
+.frame{position:relative;border-radius:26px;padding:8px;background:linear-gradient(160deg,rgba(255,133,51,.55),rgba(39,44,53,.6) 40%,rgba(255,159,26,.35));
+  box-shadow:0 0 0 1px rgba(255,255,255,.04),0 30px 90px rgba(0,0,0,.65),0 0 120px rgba(255,133,51,.18)}
+.frame video{display:block;border-radius:19px;background:#000;aspect-ratio:9/16;width:auto;max-width:100%;height:min(80vh,calc(100vh - 250px));height:min(80svh,calc(100svh - 250px));min-height:420px}
+.caption{margin-top:20px;color:var(--muted);font-size:16px;max-width:520px;font-weight:300}
+.caption b{color:var(--cream);font-weight:500}
+.vmeta{font-family:var(--mono);font-size:12px;color:var(--muted);letter-spacing:.08em;margin-top:8px}
+
+/* sections */
+section{padding:68px 0}
+.sec-label{font-family:var(--mono);font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:var(--orange);margin-bottom:12px}
+h2{font-size:clamp(28px,4.4vw,44px);line-height:1.1;letter-spacing:-.02em;font-weight:700;margin-bottom:18px}
+h2 em{font-style:normal;color:var(--orange)}
+.sec-intro{color:var(--muted);font-weight:300;font-size:19px;margin-bottom:34px;max-width:640px}
+p+p{margin-top:1em}
+.card{background:linear-gradient(180deg,rgba(21,24,30,.92),rgba(14,17,21,.92));border:1px solid var(--border);border-radius:var(--radius);padding:28px}
+
+/* fronts */
+.fronts{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.front{position:relative;overflow:hidden;transition:.25s}
+.front:hover{border-color:rgba(255,133,51,.5);transform:translateY(-3px)}
+.front::before{content:"";position:absolute;left:0;top:0;right:0;height:3px;background:var(--grad)}
+.front .num{font-family:var(--mono);font-size:13px;color:var(--orange);letter-spacing:.1em}
+.front h3{font-size:24px;font-weight:600;margin:6px 0 10px;letter-spacing:-.01em}
+.front p{color:#c3c8d3;font-size:16px;font-weight:300}
+.front p b{color:var(--cream);font-weight:500}
+.tags{display:flex;flex-wrap:wrap;gap:6px;margin-top:14px}
+.tag{font-size:12px;font-family:var(--mono);padding:3px 10px;border-radius:999px;border:1px solid var(--border);color:var(--muted)}
+
+/* answers */
+.qa{display:grid;gap:18px}
+.qa .card h3{font-size:14px;font-family:var(--mono);letter-spacing:.12em;text-transform:uppercase;color:var(--orange);font-weight:500;margin-bottom:14px}
+.qa .card p{font-weight:300;color:#dfe2ea;font-size:18px}
+.qa .card p strong{font-weight:500;color:var(--cream)}
+.pull{border-left:3px solid var(--orange);padding:4px 0 4px 18px;margin-top:1.1em;color:var(--cream)!important;font-weight:400!important}
+.contrib{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:12px;list-style:none}
+.contrib li{display:flex;gap:12px;align-items:center;padding:14px 16px;border-radius:12px;background:var(--secondary);border:1px solid var(--border);font-size:17px}
+.contrib li::before{content:"";flex:none;width:9px;height:9px;border-radius:50%;background:var(--grad);box-shadow:0 0 12px var(--glow)}
+.steps{list-style:none;counter-reset:s;display:grid;gap:14px}
+.steps li{counter-increment:s;display:flex;gap:16px;align-items:flex-start;font-weight:300;color:#dfe2ea;font-size:18px}
+.steps li::before{content:counter(s);flex:none;width:34px;height:34px;border-radius:50%;display:grid;place-items:center;background:var(--grad);color:#1a0d02;font-weight:700;font-size:15px;margin-top:1px}
+
+/* profile */
+.profile{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--border);border:1px solid var(--border);border-radius:var(--radius);overflow:hidden}
+.profile div{background:var(--card);padding:18px 22px}
+.profile dt{font-family:var(--mono);font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);margin-bottom:4px}
+.profile dd{font-size:18px;font-weight:500}
+.profile dd small{display:block;font-weight:300;color:var(--muted);font-size:14px}
+
+.cta{text-align:center;padding:40px 28px}
+.cta h2{margin-bottom:10px}
+.cta p{color:var(--muted);font-weight:300;margin-bottom:22px}
+.cta .row{display:flex;gap:12px;justify-content:center;flex-wrap:wrap}
+
+footer{border-top:1px solid var(--border);padding:34px 0 48px;color:var(--muted);font-size:14px;text-align:center;font-weight:300}
+footer p{max-width:620px;margin:0 auto}
+footer .brand{justify-content:center;margin-bottom:14px;color:var(--cream)}
+
+@media(max-width:860px){.profile{grid-template-columns:repeat(2,1fr)}.fronts{grid-template-columns:1fr}.links .pill span{display:none}}
+@media(max-width:560px){.profile{grid-template-columns:1fr}body{font-size:16px}section{padding:48px 0}.card{padding:22px}.frame{padding:6px;border-radius:22px}.frame video{border-radius:16px}.brand small{display:none}}
+@media(prefers-reduced-motion:reduce){*{transition:none!important;scroll-behavior:auto!important}}
+</style>
+</head>
+<body>
+<div class="stars" aria-hidden="true"></div>
+
+<header>
+  <nav class="wrap">
+    <a class="brand" href="#top" aria-label="Igor Noronha">
+      <img src="assets/klaus-mark.svg" alt="" width="34" height="34">
+      <div>Igor Noronha<small>Ambassador application</small></div>
+    </a>
+    <div class="links">
+      <a class="pill" href="https://x.com/iggynore" target="_blank" rel="noopener"><svg viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg><span>@iggynore</span></a>
+      <a class="pill" href="https://www.linkedin.com/in/iggynore" target="_blank" rel="noopener"><svg viewBox="0 0 24 24"><path d="M20.45 20.45h-3.56v-5.57c0-1.33-.03-3.04-1.85-3.04-1.86 0-2.14 1.45-2.14 2.94v5.67H9.35V9h3.41v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.06 2.06 0 1 1 0-4.12 2.06 2.06 0 0 1 0 4.12zM7.12 20.45H3.56V9h3.56v11.45z"/></svg><span>LinkedIn</span></a>
+    </div>
+  </nav>
+</header>
+
+<main id="top">
+  <div class="wrap hero">
+    <div class="eyebrow"><i></i>SpaceXSI Ambassador application</div>
+    <h1>Igor <em>Noronha</em></h1>
+    <div class="stage">
+      <div class="frame">
+        <video controls playsinline preload="metadata" poster="assets/poster.jpg" aria-label="Igor Noronha's video pitch for the SpaceXSI ambassador program">
+          <source src="assets/ambassador-video.mp4" type="video/mp4">
+          Your browser can't play this video. <a href="assets/ambassador-video.mp4">Download it</a>.
+        </video>
+      </div>
+      <p class="caption"><b>Three fronts for the SpaceXSI ambassador program,</b> from the beaches of Florianópolis.</p>
+      <div class="vmeta">1:06 · PRESS PLAY, SOUND ON</div>
+    </div>
+
+    <p class="lede">Builder, founder and storyteller in <b>Florianópolis, Brazil</b>. Working daily with <b>Cursor, Grok Bot and Grok Build</b>.</p>
+    <div class="chips">
+      <span class="chip o">Cursor</span><span class="chip o">Grok Bot</span><span class="chip o">Grok Build</span>
+      <span class="chip">Florianópolis, Brazil</span><span class="chip">CTO, Flow Aesthetics</span>
+    </div>
+
+  </div>
+
+  <section id="fronts">
+    <div class="wrap">
+      <div class="sec-label">The plan</div>
+      <h2>Three <em>fronts</em></h2>
+      <p class="sec-intro">The same three fronts I pitch in the video: in the room, online, and in culture.</p>
+      <div class="fronts">
+        <article class="card front">
+          <div class="num">01</div>
+          <h3>In-person</h3>
+          <p><b>Grok Bot workshops</b> across our island and state, for non-tech founders. Together with <b>Alex Ferrari</b>, who is already an ambassador.</p>
+          <div class="tags"><span class="tag">workshops</span><span class="tag">meetups</span><span class="tag">build nights</span></div>
+        </article>
+        <article class="card front">
+          <div class="num">02</div>
+          <h3>Online</h3>
+          <p>Posting about <b>what's possible with Grok Bot</b> on X, Instagram, LinkedIn and TikTok.</p>
+          <div class="tags"><span class="tag">X</span><span class="tag">IG</span><span class="tag">LinkedIn</span><span class="tag">TikTok</span></div>
+        </article>
+        <article class="card front">
+          <div class="num">03</div>
+          <h3>Creative</h3>
+          <p>The animated series <b>Large Language Wars</b> on the cultural layer: Groku, the underdog AI, entering battles in the Benchmark Arena.</p>
+          <div class="tags"><span class="tag">animation</span><span class="tag">LLW</span><span class="tag">Groku</span></div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section id="answers" style="padding-top:0">
+    <div class="narrow">
+      <div class="sec-label">In my words</div>
+      <h2>Why <em>me</em></h2>
+      <div class="qa">
+
+        <div class="card">
+          <h3>What I love about Cursor, Grok Bot and Grok Build</h3>
+          <p>The interconnectivity between the three services stunned me, and it only keeps improving. Today I have my setup with Grok Bot at the center, easy to pick up cloud agents that keep working while I'm offline.</p>
+          <p>On Cursor, I love the versatility of being able to switch between agent mode and IDE. I also like the new Projects feature and am planning to replace my OpenClaw that I've been working on since January/February with Cursor Agents.</p>
+          <p>And Grok Build is great for daily use to make landing pages, dashboards, and general visualization of anything I do with Bot, and enables me to make anything quick I imagine in a very fast way.</p>
+          <p class="pull">For example, yesterday I thought of making a searchable archive of my 50,000 X bookmarks. Bot used the X API, and I had what I had imagined only a few minutes later.</p>
+        </div>
+
+        <div class="card">
+          <h3>What I use them for</h3>
+          <p>Today I'm my own gaming and animation studio, producing in the culture/entertainment layer to captivate hearts and minds to the techno optimism cause. And I implement AI/SI for companies through my consultancy firm. I onboarded dozens of tech and non-tech founders on Bot and I just love to see them use it and get awed.</p>
+          <p>I myself run a fleet of specialized bots (an X growth coach, a nightly check-in that drafts posts in my voice, a backlog bot that tracks my stalled projects, a bookmark archiver, a CRM for my AI consultancy agency) and have it connected to my OpenClaw-based agent team (agent harness and AI chief of staff called Klaus, soon to be Cursor Agents-based).</p>
+        </div>
+
+        <div class="card">
+          <h3>How I'd contribute</h3>
+          <ul class="contrib">
+            <li>Bringing together users for in-person meetups</li>
+            <li>Running build nights</li>
+            <li>Creating a course</li>
+            <li>Organizing hackathons</li>
+            <li>Hosting workshops</li>
+            <li>Creating tutorials</li>
+          </ul>
+        </div>
+
+        <div class="card">
+          <h3>Other ideas</h3>
+          <p>"Build what you Love" sessions for artists, writers and indie game makers, showing how I build games and content pipelines.</p>
+          <p>Meanwhile, I aim to influence the culture and entertainment layer, populating it with easy to consume short content series about techno optimism, space exploration, AI-related fiction, and more, based on characters and fantasy worlds.</p>
+        </div>
+
+        <div class="card">
+          <h3>Already contributing to the community</h3>
+          <p style="margin-bottom:18px"><strong>Yes.</strong></p>
+          <ol class="steps">
+            <li><span>I've presented four times at Cursor events in Florianópolis and helped run Grok Bot Building Day at Founder Haus Jurerê.</span></li>
+            <li><span>My Large Language Wars series is about Groku, the underdog AI model that was not built to fight but longs to.</span></li>
+            <li><span>And, as I mentioned before, I have onboarded dozens of non-tech founders to Grok Bot.</span></li>
+          </ol>
+        </div>
+
+        <div class="card">
+          <h3>How I'd get started</h3>
+          <p>Running hackathons and build nights, and making content with Cursor, Grok Bot and Grok Build, including Grok Bot tutorials showing how I use it.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="about" style="padding-top:0">
+    <div class="wrap">
+      <div class="sec-label">At a glance</div>
+      <h2>About <em>Igor</em></h2>
+      <dl class="profile">
+        <div><dt>Name</dt><dd>Igor Noronha</dd></div>
+        <div><dt>Based in</dt><dd>Florianópolis, Brazil<small>Jurerê area, Santa Catarina</small></dd></div>
+        <div><dt>Background</dt><dd>CTO, Flow Aesthetics<small>Technical background</small></dd></div>
+        <div><dt>Products used</dt><dd>Cursor, Grok Bot, Grok Build</dd></div>
+        <div><dt>How long using them</dt><dd>More than a year<small>Cursor since 2024</small></dd></div>
+        <div><dt>Find me</dt><dd><a href="https://x.com/iggynore" target="_blank" rel="noopener">x.com/iggynore</a><small><a href="https://www.linkedin.com/in/iggynore" target="_blank" rel="noopener">linkedin.com/in/iggynore</a></small></dd></div>
+      </dl>
+    </div>
+  </section>
+
+  <section style="padding-top:0">
+    <div class="narrow">
+      <div class="card cta">
+        <h2>Let's build <em>together</em></h2>
+        <p>Say hi, or come to a build night in Florianópolis.</p>
+        <div class="row">
+          <a class="btn" href="https://x.com/iggynore" target="_blank" rel="noopener">Message me on X</a>
+          <a class="pill" href="https://www.linkedin.com/in/iggynore" target="_blank" rel="noopener">Connect on LinkedIn</a>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="brand"><img src="assets/klaus-mark.svg" alt="" width="34" height="34"><span>Igor Noronha</span></div>
+    <p>This is a personal, unofficial page that supports Igor Noronha's SpaceXSI Ambassador application. It is not affiliated with, endorsed by, or published by Cursor, xAI, SpaceX or SpaceXSI. Visual style inspired by Klaus OS, Igor's own AI chief of staff.</p>
+  </div>
+</footer>
+</body>
+</html>
